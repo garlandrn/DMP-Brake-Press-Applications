@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace DMP_Brake_Press_Application
+{
+    public partial class Step_Fault_Message : Form
+    {
+        public Step_Fault_Message()
+        {
+            InitializeComponent();
+            this.ShowInTaskbar = false;
+        }
+    }
+}

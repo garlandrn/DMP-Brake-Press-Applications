@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB6C1E38-EF67-4C5D-94F3-6C4FD1182F96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DMP_Brake_Press_Application</RootNamespace>
+    <AssemblyName>DMP Brake Press Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\insidedmp.com\Corporate\OH\OH Common\Engineering\Brake Press\Vision\ControlLogix System\HMI\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <UpdateUrl>\\insidedmp.com\Corporate\OH\OH Common\Engineering\Brake Press\Vision\ControlLogix System\HMI\</UpdateUrl>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>android-icon-48x48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E4CAF724B3BB9623B38E0938E3682D706C40DBBD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DMP Brake Press Application_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\OHN66FS01\BPprogs\Brake Press Vision\Applications\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.SDK.Discovery.PC">
+      <HintPath>\\OHN66FS01\BPprogs\Brake Press Vision\Applications\Cognex.DataMan.SDK.Discovery.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.SDK.PC">
+      <HintPath>\\OHN66FS01\BPprogs\Brake Press Vision\Applications\Cognex.DataMan.SDK.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.DataMan.SDK.Utils.PC">
+      <HintPath>\\OHN66FS01\BPprogs\Brake Press Vision\Applications\Cognex.DataMan.SDK.Utils.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="colorprogressbar">
+      <HintPath>..\..\..\..\..\Downloads\ColorProgressBarExample\ColorProgressBarExample\bin\Debug\colorprogressbar.dll</HintPath>
+    </Reference>
+    <Reference Include="DALSA.SaperaLT.SapClassBasic, Version=8.31.0.1827, Culture=neutral, PublicKeyToken=4d8604101dcb6b58, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Teledyne DALSA\Sapera\Components\NET\Bin\DALSA.SaperaLT.SapClassBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.4.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.4.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.4.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.4.0\lib\net45\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.OPCAutomation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Downloads\myOPC\myOPC\myOPC\bin\x86\Release\Interop.OPCAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcNetApi, Version=2.1.106.0, Culture=neutral, PublicKeyToken=78aea80f6827b5ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\AdvancedHMIv399x\AdvancedHMIDrivers\Support\OPC\OpcNetApi.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcNetApi.Com, Version=2.1.106.0, Culture=neutral, PublicKeyToken=78aea80f6827b5ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\AdvancedHMIv399x\AdvancedHMIDrivers\Support\OPC\OpcNetApi.Com.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\OHN66FS01\BPprogs\Brake Press Vision\Applications\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PressBrake">
+      <HintPath>M:\OH\OH Common\Engineering\Brake Press\Cincinnati Info\DCOM\PressBrake.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="SautinSoft.ExcelToPdf">
+      <HintPath>..\..\..\..\..\Desktop\SautinSoft.ExcelToPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BrowserTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowserTest.Designer.cs">
+      <DependentUpon>BrowserTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cell Overview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cell Overview.Designer.cs">
+      <DependentUpon>Cell Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Check Card Data Enter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Check Card Data Enter.Designer.cs">
+      <DependentUpon>Check Card Data Enter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Check Card Data Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Check Card Data Viewer.Designer.cs">
+      <DependentUpon>Check Card Data Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMPBrakePressLogoff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMPBrakePressLogoff.Designer.cs">
+      <DependentUpon>DMPBrakePressLogoff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeData.Designer.cs">
+      <DependentUpon>EmployeeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobList_AddJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobList_AddJob.Designer.cs">
+      <DependentUpon>JobList_AddJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAccess.Designer.cs">
+      <DependentUpon>AdminAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cell Control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cell Control.Designer.cs">
+      <DependentUpon>Cell Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobList_EditJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobList_EditJob.Designer.cs">
+      <DependentUpon>JobList_EditJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobList.Designer.cs">
+      <DependentUpon>JobList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMPBrakePressLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMPBrakePressLogin.Designer.cs">
+      <DependentUpon>DMPBrakePressLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobList_RemoveJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobList_RemoveJob.Designer.cs">
+      <DependentUpon>JobList_RemoveJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageView.Designer.cs">
+      <DependentUpon>MessageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Error.Designer.cs">
+      <DependentUpon>Report Error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQLImportTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLImportTest.Designer.cs">
+      <DependentUpon>SQLImportTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Step Fault Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Step Fault Message.Designer.cs">
+      <DependentUpon>Step Fault Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Program %28ControlLogix System%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Program %28ControlLogix System%29.Designer.cs">
+      <DependentUpon>User Program %28ControlLogix System%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Program Job Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Program Job Data.Designer.cs">
+      <DependentUpon>User Program Job Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Program Scan Out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Program Scan Out.Designer.cs">
+      <DependentUpon>User Program Scan Out.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Program Schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Program Schedule.Designer.cs">
+      <DependentUpon>User Program Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Program Select Operation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Program Select Operation.Designer.cs">
+      <DependentUpon>User Program Select Operation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Program Sign Off.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Program Sign Off.Designer.cs">
+      <DependentUpon>User Program Sign Off.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Program.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Program.Designer.cs">
+      <DependentUpon>User_Program.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPDF.Designer.cs">
+      <DependentUpon>ViewPDF.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BrowserTest.resx">
+      <DependentUpon>BrowserTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cell Overview.resx">
+      <DependentUpon>Cell Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Check Card Data Enter.resx">
+      <DependentUpon>Check Card Data Enter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Check Card Data Viewer.resx">
+      <DependentUpon>Check Card Data Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMPBrakePressLogoff.resx">
+      <DependentUpon>DMPBrakePressLogoff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeData.resx">
+      <DependentUpon>EmployeeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobList_AddJob.resx">
+      <DependentUpon>JobList_AddJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAccess.resx">
+      <DependentUpon>AdminAccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cell Control.resx">
+      <DependentUpon>Cell Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobList_EditJob.resx">
+      <DependentUpon>JobList_EditJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobList.resx">
+      <DependentUpon>JobList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMPBrakePressLogin.resx">
+      <DependentUpon>DMPBrakePressLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobList_RemoveJob.resx">
+      <DependentUpon>JobList_RemoveJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageView.resx">
+      <DependentUpon>MessageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Error.resx">
+      <DependentUpon>Report Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLImportTest.resx">
+      <DependentUpon>SQLImportTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Step Fault Message.resx">
+      <DependentUpon>Step Fault Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Program %28ControlLogix System%29.resx">
+      <DependentUpon>User Program %28ControlLogix System%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Program Job Data.resx">
+      <DependentUpon>User Program Job Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Program Scan Out.resx">
+      <DependentUpon>User Program Scan Out.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Program Schedule.resx">
+      <DependentUpon>User Program Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Program Select Operation.resx">
+      <DependentUpon>User Program Select Operation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Program Sign Off.resx">
+      <DependentUpon>User Program Sign Off.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Program.resx">
+      <DependentUpon>User_Program.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ViewPDF.resx">
+      <DependentUpon>ViewPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="DMP Brake Press Application_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxRSLinxCommCtlLib">
+      <Guid>{9687B6AE-F357-4D04-A986-123AFC96B51C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxRSOPCBROWSELib">
+      <Guid>{33B79A69-FECE-11D1-9798-00C04FD9153E}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DMPLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="android-icon-48x48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
