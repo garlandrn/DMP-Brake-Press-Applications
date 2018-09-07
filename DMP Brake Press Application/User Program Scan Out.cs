@@ -314,11 +314,11 @@ namespace DMP_Brake_Press_Application
                 LoginUsername = "DC1175";
                 DMPResID = "BP-1175";
             }
-            if (BrakePressComputerID == "OHN7009") // Brake Press 1176
+            if (BrakePressComputerID == "OHN7009") // Brake Press 1176 // Brake Press 1075
             {
                 ComputerName = "PB53973";
-                LoginUsername = "DC1176";
-                DMPResID = "BP-1176";
+                LoginUsername = "DC1075";
+                DMPResID = "BP-1075";
             }
             // My Computer For Testing
             if (BrakePressComputerID == "OHN7047NL")

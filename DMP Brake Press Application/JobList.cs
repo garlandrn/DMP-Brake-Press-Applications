@@ -3152,6 +3152,7 @@ namespace DMP_Brake_Press_Application
                     MessageBox.Show("Unable to Add Job. Please Try Again." + "\n" + "Error Code: " + ErrorNumber.ToString());
                 }
             }
+
         }
 
         private void SaveImport_Button_Click(object sender, EventArgs e)
@@ -3738,9 +3739,6 @@ namespace DMP_Brake_Press_Application
             Time += "   " + Date;
             Clock_TextBox.Text = Time;
         }
-
-
-
 
         /********************************************************************************************************************
         * 

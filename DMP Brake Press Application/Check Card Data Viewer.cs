@@ -162,6 +162,8 @@ namespace DMP_Brake_Press_Application
             DMPBrakePressLogin.Current.Enabled = true;
             DMPBrakePressLogin.Current.WindowState = FormWindowState.Normal;
             this.Close();
+
+            //
         }
 
         /********************************************************************************************************************

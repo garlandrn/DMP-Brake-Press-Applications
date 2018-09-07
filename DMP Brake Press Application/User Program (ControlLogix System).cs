@@ -16,25 +16,11 @@ using System.Text;
 using Opc.Da;
 
 /*
+ * 
 * Program: DMP Brake Press Application
 * Form: User Program (ControlLogix System)
 * Created By: Ryan Garland
-* Last Updated on 5/31/18
-* 
-* Form Sections:
-*  - User Interface
-*  --- Buttons
-*  --- ComboBox
-*  --- CheckBox
-*  --- GridView
-*  --- PictureBox
-*  
-*  - SQL DataBase Methods
-*  - Methods
-*  
-* - Clock 
-* 
-* 
+* Last Updated on 8/28/18
 * 
 */
 
@@ -51,12 +37,17 @@ namespace DMP_Brake_Press_Application
         {
             InitializeComponent();
             UserInterface = this;
+
+            // Connect to Cincinnati Brake Press Computer
             BPComputerConnect = new BackgroundWorker();
             BPComputerConnect.DoWork += new DoWorkEventHandler(ComputerConnection);
             BPComputerConnect.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BPComputerConnect_RunWorkerCompleted);
+
+            // Connect to Kepware Server
             ConnectToOPC = new BackgroundWorker();
             ConnectToOPC.DoWork += new DoWorkEventHandler(ConnectToServer_OPC);
             ConnectToOPC.RunWorkerCompleted += new RunWorkerCompletedEventHandler(ConnectToOPC_RunWorkerCompleted);
+
             RunMode_OPCs = new BackgroundWorker();
             RunMode_OPCs.DoWork += new DoWorkEventHandler(PartCount_OPC);
             RunMode_OPCs.RunWorkerCompleted += new RunWorkerCompletedEventHandler(PartCount_RunWorkerCompleted);
@@ -76,14 +67,17 @@ namespace DMP_Brake_Press_Application
         * OPC Tag Variables 
         * 
         ********************************************************************************************************************/
+
         private Opc.URL OPCUrl;
         private Opc.Da.Server OPCServer;
         private OpcCom.Factory OPCFactory = new OpcCom.Factory();
-        //
+
         private Opc.Da.Subscription GroupRead;
         private Opc.Da.SubscriptionState GroupStateRead;
+
         private Opc.Da.Subscription ScanNewJob_Write;
         private Opc.Da.SubscriptionState ScanNewJob_StateWrite;
+
         private Opc.Da.Subscription ItemID_Write;
         private Opc.Da.SubscriptionState ItemID_StateWrite;
         private Opc.Da.Subscription OperationSelection_Write;
@@ -312,8 +306,6 @@ namespace DMP_Brake_Press_Application
             ScanNewJob_Button.Focus();
             ConnectToOPC.RunWorkerAsync();
             SignOutTime.Start();
-
-
         }
 
         /********************************************************************************************************************
@@ -1889,7 +1881,7 @@ namespace DMP_Brake_Press_Application
             }
             if (System.Environment.MachineName == "BP1177")
             {
-                foreach (ItemValueResult itemValue in values) // 1107
+                foreach (ItemValueResult itemValue in values) // 1177
                 {
                     switch (itemValue.ItemName)
                     {
