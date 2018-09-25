@@ -9,6 +9,14 @@ using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
 
+/*
+ * Program: DMP Brake Press Application
+ * Form: Report Error
+ * Created By: Ryan Garland
+ * Last Updated on 9/7/18
+ *  
+ */
+
 namespace DMP_Brake_Press_Application
 {
     public partial class Report_Error : Form
@@ -24,10 +32,11 @@ namespace DMP_Brake_Press_Application
         private static int ClockMinute;
         private static int ClockSecond;
 
-        // SQL 
+        // SQL Connection 
         private string SQL_Source = @"Data Source = OHN7009,49172; Initial Catalog = Brake_Press_Data; Integrated Security = True; Connect Timeout = 15;";
         private static int MessageID = 0;
 
+        // Preset Messaging Options For Operators
         private static string[] MessageOptions = { "Camera is Not Taking Pictures", "Job Needs Vision Program", "Job is Failing While Running", "Custom" };
 
         private static bool MessageSelected = false;

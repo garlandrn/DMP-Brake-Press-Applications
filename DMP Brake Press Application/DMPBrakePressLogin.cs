@@ -12,25 +12,11 @@ using System.Text;
 using System.Windows.Forms;
 
 /*
+ * 
  * Program: DMP Brake Press Application
  * Form: DMPBrakePressLogin
  * Created By: Ryan Garland
- * Last Updated on 3/26/17
- * 
- * Form Sections:
- *  - User Interface
- *  --- Buttons
- *  --- ComboBox
- *  --- CheckBox
- *  --- GridView
- *  --- PictureBox
- *  
- *  - SQL DataBase Methods
- *  - Methods
- *  
- * - Clock 
- * 
- * 
+ * Last Updated on 9/17/18
  * 
  */
 
@@ -83,6 +69,8 @@ namespace DMP_Brake_Press_Application
         private int rows_2 = 0;
 
         List<string> name = new List<string>();
+        
+        private static string BrakePressName = "";
 
         /********************************************************************************************************************
         * 
@@ -101,8 +89,7 @@ namespace DMP_Brake_Press_Application
             BrakePressID();
             LoadEmployeeList();
             LoadEmployeeNames();
-            LoadEmployeeNames_2();
-            
+            LoadEmployeeNames_2();            
         }
 
         /*******************************************************************************************************************
@@ -193,23 +180,25 @@ namespace DMP_Brake_Press_Application
         ********************************************************************************************************************/
         #region
 
+        // Load Employee List and Order By First Name
         public void LoadEmployeeList()
         {
             SqlConnection connection = new SqlConnection(SQL_Connection);
-            string BP1176 = "SELECT * FROM [dbo].[Employee] ORDER BY EmployeeName ASC";
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(BP1176, connection);
+            string LoadEmployee = "SELECT * FROM [dbo].[Employee] ORDER BY EmployeeName ASC";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(LoadEmployee, connection);
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             DataSet Data = new DataSet();
             dataAdapter.Fill(Data);
             LoginGridView.DataSource = Data.Tables[0];
         }
 
+        // Count the Number of 
         public void LoadEmployeeNames()
         {
             int rows = 0;
-            string BP1176Count = "SELECT COUNT(*) FROM [dbo].[Employee]";
+            string LoadEmployeeCount = "SELECT COUNT(*) FROM [dbo].[Employee]";
             SqlConnection count = new SqlConnection(SQL_Connection);
-            SqlCommand countRows = new SqlCommand(BP1176Count, count);
+            SqlCommand countRows = new SqlCommand(LoadEmployeeCount, count);
             count.Open();
             rows = (int)countRows.ExecuteScalar();
             rows_2 = (int)countRows.ExecuteScalar();
@@ -505,8 +494,9 @@ namespace DMP_Brake_Press_Application
 
         private void BrakePressID()
         {
-            string SpotWeldComputerID = System.Environment.MachineName;
-            if (SpotWeldComputerID == "OHN7047NL")
+            string BrakePressComputerID = System.Environment.MachineName;
+
+            if (BrakePressComputerID == "OHN7047NL")
             {
                 //EmployeeName_ComboBox.Text = "Ryan Garland";
                 EmployeeName_TextBox.Text = "Ryan Garland";
@@ -514,7 +504,7 @@ namespace DMP_Brake_Press_Application
                 AdminButtons_GroupBox.Visible = true;
                 TestFormsGroupBox.Visible = true;
             }
-            if (SpotWeldComputerID == "OHN7125NL")
+            if (BrakePressComputerID == "OHN7125NL")
             {
                 EmployeeName_ComboBox.Text = "Dale Worline";
                 EmployeeName_TextBox.Text = "Dale Worline";
@@ -522,7 +512,7 @@ namespace DMP_Brake_Press_Application
                 AdminButtons_GroupBox.Visible = true;
                 TestFormsGroupBox.Visible = true;
             }
-            if (SpotWeldComputerID == "OHN7070NL")
+            if (BrakePressComputerID == "OHN7070NL")
             {
                 EmployeeName_ComboBox.Text = "Sean Pleiman";
                 EmployeeName_TextBox.Text = "Sean Pleiman";
@@ -530,8 +520,70 @@ namespace DMP_Brake_Press_Application
                 AdminButtons_GroupBox.Visible = true;
                 TestFormsGroupBox.Visible = true;
             }
+
+            // CAT Brake Press
+            if (BrakePressComputerID == "OHN7017") // Brake Press 1107
+            {
+                BrakePressName = "1107";
+            }
+            else if (BrakePressComputerID == "BP1139") // Brake Press 1139
+            {
+                BrakePressName = "1139";
+            }
+            else if (BrakePressComputerID == "BP1177") // Brake Press 1177
+            {
+                BrakePressName = "1177";
+            }
+            // John Deere Brake Press
+            else if (BrakePressComputerID == "OHN7120") // Brake Press 1127
+            {
+                BrakePressName = "1127";
+            }
+            else if (BrakePressComputerID == "OHN7011") // Brake Press 1178
+            {
+                BrakePressName = "1178";
+            }
+            // Navistar Brake Press
+            else if (BrakePressComputerID == "OHN7055") // Brake Press 1065
+            {
+                BrakePressName = "1065";
+            }
+            else if (BrakePressComputerID == "OHN7052") // Brake Press 1108
+            {
+                BrakePressName = "1108";
+            }
+            else if (BrakePressComputerID == "OHN7082") // Brake Press 1156
+            {
+                BrakePressName = "1156";
+            }
+            else if (BrakePressComputerID == "OHN7148") // Brake Press 1720
+            {
+                BrakePressName = "1720";
+            }
+            // Paccar Brake Press
+            else if (BrakePressComputerID == "OHN7066") // Brake Press 1083
+            {
+                BrakePressName = "1083";
+            }
+            else if (BrakePressComputerID == "OHN7121") // Brake Press 1155
+            {
+                BrakePressName = "1155";
+            }
+            else if (BrakePressComputerID == "OHN7067") // Brake Press 1158
+            {
+                BrakePressName = "1158";
+            }
+            else if (BrakePressComputerID == "OHN7122") // Brake Press 1175
+            {
+                BrakePressName = "1175";
+            }
+            else if (BrakePressComputerID == "OHN7009") // Brake Press 1176
+            {
+                BrakePressName = "1176";
+            }
         }
 
+        // Set the Form to minimized, disable it, remove icon from taskbar
         private void OpenNewForm()
         {
             Current.WindowState = FormWindowState.Minimized;
@@ -560,6 +612,7 @@ namespace DMP_Brake_Press_Application
         *********************************************************************************************************************/
         #region
 
+        // Clock tick timer
         private void Clock_Tick(object sender, EventArgs e)
         {
             string AMPM = "";
@@ -613,8 +666,8 @@ namespace DMP_Brake_Press_Application
             Time += " " + AMPM;
             Time += "   " + Date;
             Clock_TextBox.Text = Time;
-
         }
+
 
         private void DMPBrakePressLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -653,7 +706,7 @@ namespace DMP_Brake_Press_Application
                 //objeto_mail.To.Add(new MailAddress("dworline@defiancemetal.com"));
                 //objeto_mail.To.Add(new MailAddress("ngill@defiancemetal.com"));
                 objeto_mail.Subject = "Camera Closed Attempt";
-                objeto_mail.Body = "Camera Closed Attempt";
+                objeto_mail.Body = "Camera Closed Attempt " + BrakePressName;
                 client.Send(objeto_mail);
             }
             catch (Exception ex)
@@ -680,7 +733,7 @@ namespace DMP_Brake_Press_Application
                 //objeto_mail.To.Add(new MailAddress("dworline@defiancemetal.com"));
                 //objeto_mail.To.Add(new MailAddress("ngill@defiancemetal.com"));
                 objeto_mail.Subject = "Brake Press Logoff Attempt";
-                objeto_mail.Body = "Brake Press Logoff Attempt";
+                objeto_mail.Body = "Brake Press Logoff Attempt " + BrakePressName;
                 client.Send(objeto_mail);
             }
             catch (Exception ex)
@@ -804,7 +857,6 @@ namespace DMP_Brake_Press_Application
 
                     OpenNewForm();
 
-
                 }
 
                 else
@@ -919,7 +971,6 @@ namespace DMP_Brake_Press_Application
                 int count = ds.Tables[0].Rows.Count;
                 if (count == 1)
                 {
-
                     ListBox.Items.Add("Login Successful!");
                     // EmployeeName_Text.Clear();
                     //DMPID_TextBox.Clear();
@@ -933,7 +984,6 @@ namespace DMP_Brake_Press_Application
                     ViewMessage.Show();
                     ViewMessage.Show();
                     OpenNewForm();
-
                 }
                 else
                 {

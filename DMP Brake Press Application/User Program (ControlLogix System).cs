@@ -866,6 +866,8 @@ namespace DMP_Brake_Press_Application
                 Brake_Press_OPC = "OHN66OPC.Brake_Press_1065.Global.";
                 Brake_Press_Fault_OPC = "OHN66OPC.Brake_Press_1065.Prgm_MainProgram.";
                 BrakePressRefresh_SQL = "SELECT * FROM [dbo].[BP_1065_Schedule] ORDER BY RunOrder ASC";
+                Brake_Press_ID = "OHN66OPC.Brake_Press_ControlLogix.Global.";
+                Brake_Press_Fault_OPC = "OHN66OPC.Brake_Press_ControlLogix.Prgm_MainProgram.";
 
                 // Select BarCode Reader on Current Brake Press
 
@@ -3835,9 +3837,7 @@ namespace DMP_Brake_Press_Application
         * 
         *********************************************************************************************************************/
         #region
-
-
-
+            
         void BPComputerConnect_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             PartsFormed_TextBox.Text = ValuesArray[1];
